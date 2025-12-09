@@ -14,7 +14,7 @@ The LED pin can be pulled low to turn off the LED. This can be done by:
   2. Wiring to a spare digital pin and control it with digitalWrite().
 
 ----
-# TUTORIAL SET UP
+# TUTORIAL SET-UP
 ----
 ### HARDWARE
 
@@ -104,6 +104,14 @@ A 16-bit number can count from:
 
 
 **R, G and B values**
+
+The TCS34725 sensor doesn’t output human-readable colour names. Instead, it provides raw digital values via a 16-bit ADC (analogue-to-digital converter), representing the intensity of red, green, and blue light detected.
+
+These raw values give a reference of colour predominance — for example, if the red channel is much higher than green or blue, the object is likely red. However, for consistent comparisons, it is recommended to normalise these values (e.g., scale according to total light intensity or to a standard 0–255 range).
+
+The 16-bit RGB raw values can range from:
+
+    - 0 to 65,535
 
 ----
 
