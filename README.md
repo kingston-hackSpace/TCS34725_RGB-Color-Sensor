@@ -14,7 +14,7 @@ The LED pin can be pulled low to turn off the LED. This can be done by:
   2. Wiring to a spare digital pin and control it with digitalWrite().
 
 ----
-# TUTORIAL
+# TUTORIAL SET UP
 ----
 ### HARDWARE
 
@@ -32,10 +32,8 @@ A4 | SDA
 A5 | SCL (I2C Clock signal)
 
 ----
-### CODE AND INSTRUCTIONS
+## TUTORIAL 1: Visualizing RGB-sensor data in the Arduino Serial Monitor
 ----
-
-**1. Visualizing RGB-sensor data in the Arduino Serial Monitor**
    
 - Download the corresponding libraries [Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725)
 
@@ -108,31 +106,6 @@ A 16-bit number can count from:
 **R, G and B values**
 
 ----
-**2. Calibrating the sensor for accurate readings**
-
-- The following code provides sensor calibration for accurate readings
-
-- Upload [this code] to your Arduino board.
-
-- Open the Arduino Serial Monitor to see the incoming data.
-
-- Make sure the sensor’s illumination LED is on.
-
-- Place a matte-pure-white-card close to the sensor (usually 5–10 mm away).
-
-- With the card still covering the sensor, press the **RESET** button on the Arduino. The Arduino code will reload, allowing us to collect a baseline of white readings.
-
-- Look at the Serial Monitor and wait until the calibration is completed.
-
-- You now will see new values with calibrated data.
-
-
-
-----
-**3. Mapping normalised values**
-
-----
-
 
 ### Colour reading TIPS
 
@@ -143,6 +116,41 @@ A 16-bit number can count from:
 - If your object is too far or at an angle, readings may be weak or uneven.
 
 - The TCS34725 LED helps reduce ambient light interference. The LED provides constant and stable illumination. 
+
+----
+## TUTORIAL 2: Calibrating the sensor for accurate readings
+
+- Upload [this code](https://github.com/kingston-hackSpace/TCS34725_RGB-Color-Sensor/blob/main/RGB_Sensor_RGB-cal.ino) to your Arduino board.
+
+- Open the Arduino Serial Monitor to see the incoming data.
+  
+- Place a matte-pure-white-card close to the sensor (usually 5–10 mm away).
+  
+- Make sure the sensor’s illumination LED is on.
+  
+- With the card still covering the sensor, press the **RESET** button on the Arduino. The Arduino code will reload, allowing us to collect a baseline of white readings.
+
+- Look at the Serial Monitor and wait until the calibration is completed.
+
+- You now will see new values with calibrated data.
+
+- The new sensor values represent:
+
+  - Raw RGB readings + Raw Brightness(C) (0 - 65,535)
+    
+  - RGB percentages (%) as normalised values (0.0 - 1.0)
+    
+  - Normalised brightness values (0.0 - 1.0)
+  
+----
+## TUTORIAL 3: Sensing HSV
+
+- Upload [this code](https://github.com/kingston-hackSpace/TCS34725_RGB-Color-Sensor/blob/main/RGB_Sensor_HSV-cal.ino) to your Arduino board
+
+----
+## TUTORIAL 4:  Naming HSV colours
+
+- Upload [this code](https://github.com/kingston-hackSpace/TCS34725_RGB-Color-Sensor/blob/main/RGB_sensor_HSV-names.ino) to your Arduino board
 
 ----
 ### MORE TUTORIALS
