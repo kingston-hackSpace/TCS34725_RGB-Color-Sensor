@@ -3,17 +3,15 @@
 The TCS3472 sensor provides a digital return of red, green, blue (RGB), and clear light sensing values. An RGB Color sensor helps you accurately detect an object’s colour in your Arduino projects.
 
 ----
-**TCS34725 board LED**
+**TCS34725 on-board white LED**
 
-Use to provide constant illumination. 
+Used to provide constant illumination. 
 
 The LED pin can be pulled low to turn off the LED. This can be done by:
 
   1. Wiring directly to ground to turn it off completely.
      
   2. Wiring to a spare digital pin and control it with digitalWrite().
-
-
 
 ----
 # TUTORIAL
@@ -37,7 +35,7 @@ A5 | SCL (I2C Clock signal)
 ### CODE AND INSTRUCTIONS
 ----
 
-**1. Visualizing RGB data in the Arduino's Serial Monitor**
+**1. Visualizing RGB-sensor data in the Arduino Serial Monitor**
    
 - Download the corresponding libraries [Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725)
 
@@ -116,9 +114,18 @@ A 16-bit number can count from:
 
 - Upload [this code] to your Arduino board.
 
-- Place a pure white card close to the sensor (usually 5–10 mm away).
+- Open the Arduino Serial Monitor to see the incoming data.
 
-- While still covering the sensor with the white card, **reset** your Arduino (push the Arduino reset button, or unplug and replug). The Arduino code will reload, allowing us to collect a baseline of white readings. 
+- Make sure the sensor’s illumination LED is on.
+
+- Place a matte-pure-white-card close to the sensor (usually 5–10 mm away).
+
+- With the card still covering the sensor, press the **RESET** button on the Arduino. The Arduino code will reload, allowing us to collect a baseline of white readings.
+
+- Look at the Serial Monitor and wait until the calibration is completed.
+
+- You now will see new values with calibrated data.
+
 
 
 ----
