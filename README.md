@@ -35,7 +35,10 @@ A5 | SCL (I2C Clock signal)
 
 ----
 ### CODE AND INSTRUCTIONS
+----
 
+**1. Visualizing RGB data in the Arduino's Serial Monitor**
+   
 - Download the corresponding libraries [Adafruit_TCS34725](https://github.com/adafruit/Adafruit_TCS34725)
 
 - Install the libraries via "Importing a .zip Library". Instructions [here](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries/)
@@ -47,12 +50,13 @@ A5 | SCL (I2C Clock signal)
 
 - Open Arduino's Serial Monitor to see the incoming data.
 
+
 ----
 ### UNDERSTANDING THE VALUES
 
 Based on the TCS34725 library, we can use specific functions to read the following parameters:
 
-**1) Color Temperature (measured in Kelvin)**
+**Color Temperature (measured in Kelvin)**
 
   Typical range:
 
@@ -64,7 +68,7 @@ Based on the TCS34725 library, we can use specific functions to read the followi
 
       7,000–10,000+ K → very blue-ish light
   
-**2) Lux (Lumens per Square Meter)**
+**Lux (Lumens per Square Meter)**
 
 *The TCS34725 can read up to about 40k–50k lux before saturating*, depending on settings.
 
@@ -79,10 +83,8 @@ Based on the TCS34725 library, we can use specific functions to read the followi
       1,000–10,000 lux → outdoors shade
 
       10,000–100,000 lux → bright sunlight
-
-
   
-**3)Clear Light (unfiltered) value**
+**Clear Light (unfiltered) value**
 
 The TCS34725 measures light using a 16-bit ADC (analogue-to-digital converter).
 
@@ -105,9 +107,26 @@ A 16-bit number can count from:
     65,535 → too bright (saturation)
 
 
-**4) R, G and B values**
+**R, G and B values**
 
 ----
+**2. Calibrating the sensor for accurate readings**
+
+- The following code provides sensor calibration for accurate readings
+
+- Upload [this code] to your Arduino board.
+
+- Place a pure white card close to the sensor (usually 5–10 mm away).
+
+- While still covering the sensor with the white card, **reset** your Arduino (push the Arduino reset button, or unplug and replug). The Arduino code will reload, allowing us to collect a baseline of white readings. 
+
+
+----
+**3. Mapping normalised values**
+
+----
+
+
 ### Colour reading TIPS
 
 - Place different objects in front of the sensor to perform colour readings. See reference [here](https://www.youtube.com/watch?v=FQnzRW4XukA&t=5s)
